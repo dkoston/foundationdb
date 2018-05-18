@@ -6,6 +6,7 @@ fdb-go
 This package requires:
 
 - Go 1.1+ with CGO enabled
+- [Mono](http://www.mono-project.com/)
 - FoundationDB C API 2.0.x, 3.0.x, or 4.x.y (part of the [FoundationDB clients package](https://apple.github.io/foundationdb/downloads.html#c))
 
 Use of this package requires the selection of a FoundationDB API version at runtime. This package currently supports FoundationDB API versions 200-520.
@@ -19,6 +20,10 @@ This will create binary packages for the appropriate platform within the "build"
 To install this package, you can run the "fdb-go-install.sh" script:
 
     ./fdb-go-install.sh install 
+
+NOTE: the installer will install the client for FoundationDB 5.1.0 by default, to specify your version, use:
+
+    ./fdb-go-install.sh --fdbver X.X.X install
 
 The "install" command of this script does not depend on the presence of the repo in general and will download the repository into
 your local go path. Running "localinstall" instead of "install" will use the local copy here (with a symlink) instead
